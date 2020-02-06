@@ -1,3 +1,4 @@
+
 <section class="sct-color-1 slice">
   <div class="container-fluid masonry-container">
     <div class="row">
@@ -28,13 +29,17 @@
                     <%= post_image.user.name %>
                   </li>
                   <li>
-                    <a href="#">23 コメント</a>
+                    <%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
           <% end %>
+
+
+          <!--kaminariのヘルパー　ページング機能をつける-->
+<%= paginate @post_images, class: "paginate" %>
         </div>
       </div>
     </div>

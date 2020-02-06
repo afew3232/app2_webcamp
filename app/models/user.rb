@@ -11,4 +11,5 @@ class User < ApplicationRecord
     #親子のアソシエーションが終わったら rails db:migrateでテーブル作成が必要
   has_many :post_images, dependent: :destroy
   has_many :post_comment, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 end
