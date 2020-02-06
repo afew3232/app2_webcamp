@@ -38,6 +38,13 @@
                 <i class="fa fa-comment"></i>
                 <a href="#comments"><%= @post_image.post_comments.count %></a>
               </li>
+
+    <li>
+      <!--ログインユーザーと投稿したユーザが同じなら　削除できる-->
+      <% if @post_image.user == current_user %>
+  <%= link_to "削除", post_image_path(@post_image), method: :delete %>
+<% end %>
+    </li>
             </ul>
             <div class="post-content-inner mt-20">
               <p><%= @post_image.caption %></p>
